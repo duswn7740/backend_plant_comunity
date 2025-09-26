@@ -50,9 +50,15 @@ public class BoardController {
       return boardService.getPopularWriting();
    }
 
+
    // admin 페이지 단일 게시글 삭제
    @DeleteMapping("/{boardNum}")
    public int deleteBoardByAdmin(@PathVariable("boardNum") int boardNum) {
       return boardService.deleteBoardByAdmin(boardNum);
+
+   @GetMapping("/boardList")
+   public List<BoardDTO> getBoardList(){
+      return boardService.getBoardList();
+
    }
 }
